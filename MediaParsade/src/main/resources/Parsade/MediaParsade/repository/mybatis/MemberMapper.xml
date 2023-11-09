@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Parsade.MediaParsade.repository.mybatis.MemberMapper">
+
+    <insert id="save" useGeneratedKeys="true" keyProperty="id">
+        insert into member (name, studentId, type, text, selection, property)
+        values (#{name}, #{studentId}, #{type}, #{text}, #{selection}, #{property})
+    </insert>
+
+
+
+
+    <select id="findAll" resultType="ReturnMember">
+        select name, studentId, type, text, selection, property
+        from member
+    </select>
+
+
+</mapper>
